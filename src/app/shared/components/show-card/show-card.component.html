@@ -1,0 +1,32 @@
+<!-- src/app/shared/components/show-card/show-card.component.html -->
+<div class="show-card" [routerLink]="['/show', show.id]">
+  <img
+    [src]="show.image?.medium || fallbackImg"
+    [alt]="show.name || 'TV Show poster'"
+    loading="lazy"
+  />
+  <div class="details">
+    <h3>{{ show.name }}</h3>
+    <p>{{ sanitizeSummary(show.summary) }}</p>
+
+    <div class="meta">
+      <span *ngIf="show.genres?.length">🎭 {{ show.genres.join(", ") }}</span>
+      <span *ngIf="show.language">🌐 {{ show.language }}</span>
+      <span *ngIf="show.rating?.average">⭐ {{ show.rating.average }}</span>
+      <span *ngIf="show.premiered">📅 {{ show.premiered }}</span>
+      <span *ngIf="show.network?.name">📺 {{ show.network?.name }}</span>
+    </div>
+
+    <div class="link" *ngIf="show.officialSite">
+      🔗
+      <a
+        [href]="show.officialSite"
+        target="_blank"
+        rel="noopener noreferrer"
+        (click)="$event.stopPropagation()"
+      >
+        Official Site
+      </a>
+    </div>
+  </div>
+</div>

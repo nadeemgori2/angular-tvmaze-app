@@ -1,0 +1,48 @@
+<!-- src/app/features/show-details/show-details.component.html -->
+<ng-container *ngIf="show() as s">
+  <div class="show-detail">
+    <h2>{{ s.name }}</h2>
+
+    <div class="show-layout">
+      <div class="poster">
+        <div class="poster-skeleton" *ngIf="!imageLoaded"></div>
+        <img
+          [src]="s.image?.original || fallbackImg"
+          [alt]="s.name || 'TV Show poster'"
+          loading="lazy"
+          (load)="onImageLoad()"
+          (error)="onImageError($event)"
+          [class.loaded]="imageLoaded"
+        />
+      </div>
+
+      <div class="info">
+        <div class="summary" [innerHTML]="sanitizeSummary(s.summary)"></div>
+
+        <div class="meta">
+          <p><strong>Language:</strong> {{ s.language }}</p>
+          <p><strong>Genres:</strong> {{ s.genres.join(", ") }}</p>
+          <p><strong>Status:</strong> {{ s.status }}</p>
+          <p><strong>Premiered:</strong> {{ s.premiered }}</p>
+          <p *ngIf="s.network">
+            <strong>Network:</strong> {{ s?.network?.name }}
+          </p>
+          <p *ngIf="s.officialSite">
+            <a [href]="s.officialSite" target="_blank">Official Site</a>
+          </p>
+        </div>
+
+        <ng-container *ngIf="cast() as castList">
+          <div *ngIf="castList.length" class="cast">
+            <h4>Cast</h4>
+            <ul>
+              <li *ngFor="let actor of castList">{{ actor }}</li>
+            </ul>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<div *ngIf="error()" class="error">{{ error() }}</div>

@@ -1,0 +1,23 @@
+/* src/app/shared/components/show-list/show-list.component.css */
+
+.virtual-wrapper {
+  height: calc(100vh - 65px); /* Adjust based on header */
+  overflow: hidden;
+}
+
+.scroll-wrapper {
+  height: calc(100vh - 140px); /* Adjust based on header */
+  overflow: auto;
+}
+
+.viewport {
+  height: 100%;
+  overflow: auto;
+}
+
+.empty {
+  text-align: center;
+  padding: 24px;
+  color: #777;
+  font-style: italic;
+}

@@ -1,0 +1,17 @@
+<!-- src/app/features/shows/shows.component.html -->
+
+<div class="search-input">
+  <input [formControl]="searchControl" placeholder="Search by show name" />
+</div>
+
+<div *ngIf="isLoading()" class="loading">Loading shows...</div>
+<div *ngIf="error()" class="error">{{ error() }}</div>
+
+<div *ngIf="!isLoading() && !error() && shows().length === 0" class="empty">
+  <p>No shows found. Try a different title.</p>
+</div>
+
+<app-show-list
+  *ngIf="!isLoading() && shows().length"
+  [signalShows]="shows"
+></app-show-list>

@@ -1,0 +1,30 @@
+<!-- src/app/shared/components/show-list/show-list.component.html -->
+
+<ng-container *ngIf="list.length > 0">
+  <!-- Virtual Scroll Mode -->
+  <ng-container *ngIf="useVirtualScroll; else basicList">
+    <div class="virtual-wrapper">
+      <cdk-virtual-scroll-viewport
+        itemSize="180"
+        class="viewport"
+        (scrolledIndexChange)="onScroll()"
+      >
+        <ng-container *cdkVirtualFor="let show of list; trackBy: trackByShow">
+          <app-show-card [show]="show" />
+        </ng-container>
+      </cdk-virtual-scroll-viewport>
+    </div>
+  </ng-container>
+
+  <!-- Regular List Mode -->
+  <ng-template #basicList>
+    <div class="scroll-wrapper">
+      <ng-container *ngFor="let show of list; trackBy: trackByShow">
+        <app-show-card [show]="show" />
+      </ng-container>
+    </div>
+  </ng-template>
+</ng-container>
+
+<!-- Optional empty state (if needed) -->
+<div *ngIf="list.length === 0" class="empty">No shows available.</div>

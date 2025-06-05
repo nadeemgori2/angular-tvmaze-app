@@ -1,0 +1,42 @@
+/* src/app/features/shows/shows.component.css */
+
+.search-input {
+  padding: 16px;
+  background: #f1f3f5;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+.search-input input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-input input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.15);
+}
+
+.empty {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1rem;
+  color: #666;
+}
+
+.loading,
+.error {
+  text-align: center;
+  margin: 16px 0;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+}

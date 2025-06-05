@@ -1,0 +1,14 @@
+<!-- src/app/features/all-shows/all-shows.component.html -->
+
+<div *ngIf="loading && shows().length === 0" class="loading">
+  Loading shows...
+</div>
+
+<app-show-list
+  *ngIf="shows().length"
+  [signalShows]="shows"
+  [useVirtualScroll]="true"
+  (scrolledToBottom)="loadNextPage()"
+/>
+
+<div *ngIf="error" class="error">{{ error }}</div>
