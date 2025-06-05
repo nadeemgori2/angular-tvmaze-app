@@ -87,21 +87,23 @@ Open `http://localhost:4200` in your browser.
 
 ---
 
-## 🧠 Future Enhancements (Ideas Documented in Code)
+### 💡 Future Enhancements (Ideas Documented in Code)
 
-- 📥 **Pagination-aware fetching** for infinite scroll on all-shows
-- 🔍 **Debounced search input with RxJS**
-- 🧰 **Unit tests using Jest or Karma**
-- 🌙 **Dark/light mode switcher**
-- 🧩 **Component libraries integration** (Angular Material, Tailwind)
+There's always room for improvement — including enhanced accessibility, refined layout structure, and more visually appealing styling using modern CSS practices and design systems.
+- 🧱 **UI design and layout structure can be further refined** to improve visual hierarchy, spacing, and overall aesthetics
+- ♿ **Accessibility improvements** such as semantic HTML, ARIA labels, and keyboard navigation support to ensure the app is usable for everyone.
+- 🧰 Unit testing support with Jest or Karma
+- 🌙 Dark/Light theme toggle
+- 🧩 UI component libraries (e.g., Angular Material, Tailwind)
 
----
+**🎨 Styling Improvements (Future Scope):**
 
-## 📸 Screenshots
-
-| Home Page               | Virtual Scroll List       | Details Page           |
-|-------------------------|---------------------------|-------------------------|
-| ![home](./screens/home.png) | ![all](./screens/all.png) | ![details](./screens/details.png) |
+While the current app focuses on functionality and architecture, CSS can be further enhanced:
+- ♻️ Create a **centralized SCSS variables file** for colors, spacing, and typography
+- ✨ Use **CSS preprocessors** like SCSS to improve maintainability and reuse
+- 🎯 Adopt utility-first styling with **TailwindCSS**
+- 📚 Modularize styles per component and avoid redundant global styles
+- 📱 Further polish for animations, transitions, and responsive design
 
 ---
 
